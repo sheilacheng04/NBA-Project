@@ -1,0 +1,92 @@
+[
+  {
+    "home_team": "Boston Celtics",
+    "away_team": "Milwaukee Bucks",
+    "home_logo": "assets/logo(1).svg",
+    "away_logo": "assets/logo(2).svg",
+    "home_win_prob": 0.62,
+    "game_date": "2026-02-21",
+    "game_time": "7:30 PM ET"
+  },
+  {
+    "home_team": "Denver Nuggets",
+    "away_team": "Oklahoma City Thunder",
+    "home_logo": "assets/logo(3).svg",
+    "away_logo": "assets/logo(4).svg",
+    "home_win_prob": 0.48,
+    "game_date": "2026-02-21",
+    "game_time": "9:00 PM ET"
+  },
+  {
+    "home_team": "Golden State Warriors",
+    "away_team": "Los Angeles Lakers",
+    "home_logo": "assets/logo(5).svg",
+    "away_logo": "assets/logo(6).svg",
+    "home_win_prob": 0.55,
+    "game_date": "2026-02-21",
+    "game_time": "10:00 PM ET"
+  },
+  {
+    "home_team": "Phoenix Suns",
+    "away_team": "Dallas Mavericks",
+    "home_logo": "assets/logo(7).svg",
+    "away_logo": "assets/logo(8).svg",
+    "home_win_prob": 0.51,
+    "game_date": "2026-02-22",
+    "game_time": "8:00 PM ET"
+  },
+  {
+    "home_team": "Philadelphia 76ers",
+    "away_team": "New York Knicks",
+    "home_logo": "assets/logo(9).svg",
+    "away_logo": "assets/logo(10).svg",
+    "home_win_prob": 0.39,
+    "game_date": "2026-02-22",
+    "game_time": "7:00 PM ET"
+  },
+  {
+    "home_team": "Miami Heat",
+    "away_team": "Cleveland Cavaliers",
+    "home_logo": "assets/logo(11).svg",
+    "away_logo": "assets/logo(12).svg",
+    "home_win_prob": 0.44,
+    "game_date": "2026-02-22",
+    "game_time": "8:00 PM ET"
+  },
+  {
+    "home_team": "Memphis Grizzlies",
+    "away_team": "San Antonio Spurs",
+    "home_logo": "assets/logo(13).svg",
+    "away_logo": "assets/logo(14).svg",
+    "home_win_prob": 0.67,
+    "game_date": "2026-02-23",
+    "game_time": "6:00 PM ET"
+  },
+  {
+    "home_team": "Minnesota Timberwolves",
+    "away_team": "Sacramento Kings",
+    "home_logo": "assets/logo(15).svg",
+    "away_logo": "assets/logo(16).svg",
+    "home_win_prob": 0.58,
+    "game_date": "2026-02-23",
+    "game_time": "7:00 PM ET"
+  },
+  {
+    "home_team": "Indiana Pacers",
+    "away_team": "Chicago Bulls",
+    "home_logo": "assets/logo(17).svg",
+    "away_logo": "assets/logo(18).svg",
+    "home_win_prob": 0.72,
+    "game_date": "2026-02-23",
+    "game_time": "5:00 PM ET"
+  },
+  {
+    "home_team": "LA Clippers",
+    "away_team": "Houston Rockets",
+    "home_logo": "assets/logo(19).svg",
+    "away_logo": "assets/logo(20).svg",
+    "home_win_prob": 0.45,
+    "game_date": "2026-02-23",
+    "game_time": "9:30 PM ET"
+  }
+]
