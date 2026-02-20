@@ -1483,36 +1483,44 @@
 
       // ===== SCOREBOARD BAR =====
       const scoreboardData = [
-        { status: 'Final', away: { name: 'MIL', logo: 'assets/logo(2).svg', record: '32-22', pts: 108 }, home: { name: 'OKC', logo: 'assets/logo(4).svg', record: '40-14', pts: 115 } },
-        { status: 'Final', away: { name: 'DAL', logo: 'assets/logo(7).svg', record: '30-25', pts: 121 }, home: { name: 'LAL', logo: 'assets/logo(6).svg', record: '29-25', pts: 118 } },
-        { status: 'Final', away: { name: 'POR', logo: 'assets/logo(28).svg', record: '18-36', pts: 99 }, home: { name: 'UTA', logo: 'assets/logo(29).svg', record: '16-38', pts: 104 } },
-        { status: 'Final', away: { name: 'SAS', logo: 'assets/logo(14).svg', record: '27-27', pts: 110 }, home: { name: 'GSW', logo: 'assets/logo(5).svg', record: '28-26', pts: 124 } },
-        { status: 'Final', away: { name: 'IND', logo: 'assets/logo(17).svg', record: '31-24', pts: 129 }, home: { name: 'BKN', logo: 'assets/logo(18).svg', record: '18-36', pts: 114 } },
-        { status: 'Final', away: { name: 'MEM', logo: 'assets/logo(13).svg', record: '33-21', pts: 118 }, home: { name: 'DEN', logo: 'assets/logo(3).svg', record: '35-20', pts: 122 } },
-        { status: 'Final', away: { name: 'MIL', logo: 'assets/logo(2).svg', record: '32-22', pts: 103 }, home: { name: 'ORL', logo: 'assets/logo(11).svg', record: '30-25', pts: 98 } },
+        // Small scoreboard strip games
+        { status: 'Final', away: { name: 'Houston Rockets', logo: 'assets/logo(26).svg', record: '', pts: 105 }, home: { name: 'Charlotte Hornets', logo: 'assets/logo(11).svg', record: '', pts: 101 } },
+        { status: 'Final', away: { name: 'Brooklyn Nets', logo: 'assets/logo(1).svg', record: '', pts: 84 }, home: { name: 'Cleveland Cavaliers', logo: 'assets/logo(6).svg', record: '', pts: 112 } },
+        { status: 'Final', away: { name: 'Atlanta Hawks', logo: 'assets/logo(10).svg', record: '', pts: 117 }, home: { name: 'Philadelphia 76ers', logo: 'assets/logo(3).svg', record: '', pts: 107 } },
+        { status: 'Final', away: { name: 'Indiana Pacers', logo: 'assets/logo(8).svg', record: '', pts: 105 }, home: { name: 'Washington Wizards', logo: 'assets/logo(14).svg', record: '', pts: 112 } },
+
+        // Vertical list games
+        { status: 'Final', away: { name: 'Milwaukee Bucks', logo: 'assets/logo(9).svg', record: '23-30', pts: 110 }, home: { name: 'Oklahoma City Thunder', logo: 'assets/logo(17).svg', record: '42-14', pts: 93 } },
+        { status: 'Final', away: { name: 'Portland Trail Blazers', logo: 'assets/logo(18).svg', record: '27-29', pts: 135 }, home: { name: 'Utah Jazz', logo: 'assets/logo(19).svg', record: '18-38', pts: 119 } },
+        { status: 'Final', away: { name: 'Dallas Mavericks', logo: 'assets/logo(25).svg', record: '19-35', pts: 104 }, home: { name: 'Los Angeles Lakers', logo: 'assets/logo(22).svg', record: '33-21', pts: 124 } },
+        { status: 'Final', away: { name: 'Atlanta Hawks', logo: 'assets/logo(10).svg', record: '26-30', pts: 107 }, home: { name: 'Charlotte Hornets', logo: 'assets/logo(11).svg', record: '26-29', pts: 110 } },
+        { status: 'Final', away: { name: 'Washington Wizards', logo: 'assets/logo(14).svg', record: '14-39', pts: 113 }, home: { name: 'Cleveland Cavaliers', logo: 'assets/logo(6).svg', record: '34-21', pts: 138 } },
+        { status: 'Final', away: { name: 'Milwaukee Bucks', logo: 'assets/logo(9).svg', record: '22-30', pts: 116 }, home: { name: 'Orlando Magic', logo: 'assets/logo(13).svg', record: '28-25', pts: 108 } },
       ];
 
       const track = document.getElementById('scoreboard-track');
       scoreboardData.forEach(g => {
+        // compact card: no records, aligned scores, smaller card width so more games fit
         const awayWon = g.away.pts > g.home.pts;
         track.innerHTML += `
-          <div class="score-card">
-            <div class="score-status ${g.status === 'Live' ? 'live' : 'final'}">${g.status}</div>
-            <div class="score-team">
-              <div class="score-team-info">
-                <img src="${g.away.logo}" alt="${g.away.name}">
-                <span class="score-team-name">${g.away.name}</span>
-                <span class="score-team-record">${g.away.record}</span>
-              </div>
-              <span class="score-pts ${awayWon ? 'winner' : 'loser'}">${g.away.pts}</span>
+          <div class="score-card" style="display:inline-flex;align-items:center;justify-content:space-between;min-width:210px;width:210px;padding:12px 16px;border-right:1px solid rgba(0,0,0,0.06);box-sizing:border-box;">
+            <div style="display:flex;align-items:center;gap:8px;min-width:80px;">
+              <img src="${g.away.logo}" alt="${g.away.name}" style="width:28px;height:28px;object-fit:contain;">
+              <div style="font-size:13px;color:#222;">${g.away.name}</div>
             </div>
-            <div class="score-team">
-              <div class="score-team-info">
-                <img src="${g.home.logo}" alt="${g.home.name}">
-                <span class="score-team-name">${g.home.name}</span>
-                <span class="score-team-record">${g.home.record}</span>
+
+            <div style="text-align:center;min-width:56px;margin:0 8px;">
+              <div style="font-size:11px;color:#666;margin-bottom:4px;">${g.status}</div>
+              <div style="display:flex;align-items:center;gap:6px;justify-content:center;font-weight:700;font-size:16px;">
+                <span style="color:${awayWon ? '#000' : '#999'}">${g.away.pts}</span>
+                <span style="color:#222;">•</span>
+                <span style="color:${!awayWon ? '#000' : '#999'}">${g.home.pts}</span>
               </div>
-              <span class="score-pts ${!awayWon ? 'winner' : 'loser'}">${g.home.pts}</span>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:8px;justify-content:flex-end;min-width:80px;">
+              <div style="font-size:13px;color:#222;text-align:right;">${g.home.name}</div>
+              <img src="${g.home.logo}" alt="${g.home.name}" style="width:28px;height:28px;object-fit:contain;">
             </div>
           </div>`;
       });
@@ -1523,39 +1531,39 @@
 
       // ===== STANDINGS =====
       const eastTeams = [
-        { name: 'Cleveland Cavaliers', logo: 'assets/logo(6).svg', w: 40, l: 14, home: '22-5', away: '18-9', l10: '8-2', strk: 'W4' },
-        { name: 'Boston Celtics', logo: 'assets/logo.svg', w: 39, l: 15, home: '23-4', away: '16-11', l10: '7-3', strk: 'W2' },
-        { name: 'New York Knicks', logo: 'assets/logo(2).svg', w: 34, l: 20, home: '20-7', away: '14-13', l10: '6-4', strk: 'L1' },
-        { name: 'Milwaukee Bucks', logo: 'assets/logo(9).svg', w: 32, l: 22, home: '18-9', away: '14-13', l10: '7-3', strk: 'W3' },
-        { name: 'Indiana Pacers', logo: 'assets/logo(8).svg', w: 31, l: 24, home: '18-9', away: '13-15', l10: '6-4', strk: 'W1' },
-        { name: 'Orlando Magic', logo: 'assets/logo(13).svg', w: 30, l: 25, home: '19-8', away: '11-17', l10: '5-5', strk: 'L2' },
-        { name: 'Detroit Pistons', logo: 'assets/logo(7).svg', w: 29, l: 25, home: '17-10', away: '12-15', l10: '6-4', strk: 'W1' },
-        { name: 'Atlanta Hawks', logo: 'assets/logo(10).svg', w: 28, l: 27, home: '16-11', away: '12-16', l10: '4-6', strk: 'L3' },
-        { name: 'Miami Heat', logo: 'assets/logo(12).svg', w: 27, l: 27, home: '17-10', away: '10-17', l10: '5-5', strk: 'W1' },
-        { name: 'Chicago Bulls', logo: 'assets/logo(5).svg', w: 26, l: 28, home: '15-12', away: '11-16', l10: '5-5', strk: 'L1' },
-        { name: 'Brooklyn Nets', logo: 'assets/logo(1).svg', w: 18, l: 36, home: '12-15', away: '6-21', l10: '3-7', strk: 'L4' },
-        { name: 'Toronto Raptors', logo: 'assets/logo(4).svg', w: 17, l: 38, home: '11-16', away: '6-22', l10: '3-7', strk: 'L2' },
-        { name: 'Charlotte Hornets', logo: 'assets/logo(11).svg', w: 15, l: 39, home: '10-17', away: '5-22', l10: '2-8', strk: 'L5' },
-        { name: 'Philadelphia 76ers', logo: 'assets/logo(3).svg', w: 15, l: 39, home: '10-17', away: '5-22', l10: '4-6', strk: 'W1' },
-        { name: 'Washington Wizards', logo: 'assets/logo(14).svg', w: 12, l: 42, home: '8-19', away: '4-23', l10: '2-8', strk: 'L6' },
+        { name: 'Detroit Pistons', logo: 'assets/logo(7).svg', w: 40, l: 13, home: '21-6', away: '18-7', l10: '8-2', strk: 'W3' },
+        { name: 'Boston Celtics', logo: 'assets/logo.svg', w: 35, l: 19, home: '18-9', away: '17-10', l10: '7-3', strk: 'W1' },
+        { name: 'New York Knicks', logo: 'assets/logo(2).svg', w: 35, l: 20, home: '21-7', away: '13-13', l10: '8-2', strk: 'W1' },
+        { name: 'Cleveland Cavaliers', logo: 'assets/logo(6).svg', w: 35, l: 21, home: '19-11', away: '16-10', l10: '9-1', strk: 'W6' },
+        { name: 'Toronto Raptors', logo: 'assets/logo(4).svg', w: 32, l: 23, home: '16-13', away: '16-10', l10: '6-4', strk: 'L1' },
+        { name: 'Philadelphia 76ers', logo: 'assets/logo(3).svg', w: 30, l: 24, home: '15-14', away: '15-10', l10: '6-4', strk: 'L2' },
+        { name: 'Orlando Magic', logo: 'assets/logo(13).svg', w: 28, l: 25, home: '17-9', away: '10-14', l10: '5-5', strk: 'L1' },
+        { name: 'Miami Heat', logo: 'assets/logo(12).svg', w: 29, l: 27, home: '16-11', away: '13-16', l10: '5-5', strk: 'W1' },
+        { name: 'Charlotte Hornets', logo: 'assets/logo(11).svg', w: 26, l: 30, home: '12-15', away: '14-15', l10: '8-2', strk: 'L1' },
+        { name: 'Atlanta Hawks', logo: 'assets/logo(10).svg', w: 26, l: 30, home: '10-15', away: '16-15', l10: '5-5', strk: 'L3' },
+        { name: 'Chicago Bulls', logo: 'assets/logo(5).svg', w: 24, l: 31, home: '15-12', away: '9-19', l10: '1-9', strk: 'L6' },
+        { name: 'Milwaukee Bucks', logo: 'assets/logo(9).svg', w: 23, l: 30, home: '12-12', away: '11-18', l10: '5-5', strk: 'W2' },
+        { name: 'Brooklyn Nets', logo: 'assets/logo(1).svg', w: 15, l: 39, home: '8-19', away: '7-20', l10: '3-7', strk: 'L2' },
+        { name: 'Washington Wizards', logo: 'assets/logo(14).svg', w: 15, l: 39, home: '10-18', away: '5-21', l10: '5-5', strk: 'W1' },
+        { name: 'Indiana Pacers', logo: 'assets/logo(8).svg', w: 15, l: 41, home: '10-18', away: '5-23', l10: '4-6', strk: 'L1' },
       ];
 
       const westTeams = [
-        { name: 'Oklahoma City Thunder', logo: 'assets/logo(17).svg', w: 40, l: 14, home: '22-5', away: '18-9', l10: '9-1', strk: 'W6' },
-        { name: 'Houston Rockets', logo: 'assets/logo(26).svg', w: 35, l: 19, home: '20-7', away: '15-12', l10: '7-3', strk: 'W2' },
-        { name: 'Denver Nuggets', logo: 'assets/logo(15).svg', w: 35, l: 20, home: '21-6', away: '14-14', l10: '6-4', strk: 'L1' },
-        { name: 'Memphis Grizzlies', logo: 'assets/logo(27).svg', w: 33, l: 21, home: '19-8', away: '14-13', l10: '7-3', strk: 'W3' },
-        { name: 'LA Clippers', logo: 'assets/logo(21).svg', w: 31, l: 23, home: '18-9', away: '13-14', l10: '5-5', strk: 'L1' },
-        { name: 'Dallas Mavericks', logo: 'assets/logo(25).svg', w: 30, l: 25, home: '17-10', away: '13-15', l10: '6-4', strk: 'W1' },
-        { name: 'Minnesota Timberwolves', logo: 'assets/logo(16).svg', w: 30, l: 25, home: '18-9', away: '12-16', l10: '5-5', strk: 'L2' },
-        { name: 'Los Angeles Lakers', logo: 'assets/logo(22).svg', w: 29, l: 25, home: '17-10', away: '12-15', l10: '6-4', strk: 'W2' },
-        { name: 'Phoenix Suns', logo: 'assets/logo(23).svg', w: 31, l: 23, home: '19-8', away: '12-15', l10: '5-5', strk: 'L1' },
-        { name: 'Golden State Warriors', logo: 'assets/logo(20).svg', w: 28, l: 26, home: '18-9', away: '10-17', l10: '4-6', strk: 'L3' },
-        { name: 'Sacramento Kings', logo: 'assets/logo(24).svg', w: 27, l: 27, home: '16-11', away: '11-16', l10: '5-5', strk: 'W1' },
-        { name: 'San Antonio Spurs', logo: 'assets/logo(29).svg', w: 27, l: 27, home: '16-11', away: '11-16', l10: '6-4', strk: 'W2' },
-        { name: 'Portland Trail Blazers', logo: 'assets/logo(18).svg', w: 18, l: 36, home: '12-15', away: '6-21', l10: '3-7', strk: 'L3' },
-        { name: 'Utah Jazz', logo: 'assets/logo(19).svg', w: 16, l: 38, home: '10-17', away: '6-21', l10: '2-8', strk: 'L5' },
-        { name: 'New Orleans Pelicans', logo: 'assets/logo(28).svg', w: 14, l: 40, home: '9-18', away: '5-22', l10: '2-8', strk: 'L4' },
+        { name: 'Oklahoma City Thunder', logo: 'assets/logo(17).svg', w: 42, l: 14, home: '22-6', away: '20-7', l10: '5-5', strk: 'L1' },
+        { name: 'San Antonio Spurs', logo: 'assets/logo(29).svg', w: 38, l: 16, home: '19-6', away: '18-10', l10: '8-2', strk: 'W6' },
+        { name: 'Denver Nuggets', logo: 'assets/logo(15).svg', w: 35, l: 20, home: '15-11', away: '20-9', l10: '5-5', strk: 'W1' },
+        { name: 'Houston Rockets', logo: 'assets/logo(26).svg', w: 34, l: 20, home: '18-7', away: '16-13', l10: '6-4', strk: 'W1' },
+        { name: 'Los Angeles Lakers', logo: 'assets/logo(22).svg', w: 33, l: 21, home: '15-10', away: '18-11', l10: '6-4', strk: 'W1' },
+        { name: 'Minnesota Timberwolves', logo: 'assets/logo(16).svg', w: 34, l: 22, home: '19-10', away: '15-12', l10: '7-3', strk: 'W2' },
+        { name: 'Phoenix Suns', logo: 'assets/logo(23).svg', w: 32, l: 23, home: '18-10', away: '14-13', l10: '5-5', strk: 'L1' },
+        { name: 'Golden State Warriors', logo: 'assets/logo(20).svg', w: 29, l: 26, home: '18-10', away: '11-16', l10: '4-6', strk: 'L1' },
+        { name: 'Portland Trail Blazers', logo: 'assets/logo(18).svg', w: 27, l: 29, home: '16-13', away: '11-16', l10: '4-6', strk: 'W1' },
+        { name: 'LA Clippers', logo: 'assets/logo(21).svg', w: 26, l: 28, home: '13-11', away: '13-17', l10: '6-4', strk: 'W1' },
+        { name: 'Memphis Grizzlies', logo: 'assets/logo(27).svg', w: 20, l: 33, home: '10-15', away: '9-17', l10: '2-8', strk: 'L4' },
+        { name: 'Dallas Mavericks', logo: 'assets/logo(25).svg', w: 19, l: 35, home: '14-16', away: '5-18', l10: '1-9', strk: 'L9' },
+        { name: 'Utah Jazz', logo: 'assets/logo(19).svg', w: 18, l: 38, home: '11-18', away: '7-20', l10: '3-7', strk: 'L1' },
+        { name: 'New Orleans Pelicans', logo: 'assets/logo(28).svg', w: 15, l: 41, home: '9-20', away: '6-21', l10: '5-5', strk: 'L1' },
+        { name: 'Sacramento Kings', logo: 'assets/logo(24).svg', w: 12, l: 44, home: '9-19', away: '3-25', l10: '0-10', strk: 'L14' },
       ];
 
       function renderStandings(teams, tbodyId) {
@@ -1598,146 +1606,88 @@
       // ===== STATS SECTION =====
       const statsData = {
         points: [
-          { name: 'Shai Gilgeous-Alexander', team: 'OKC Thunder', value: '32.4' },
-          { name: 'Luka Doncic', team: 'DAL Mavericks', value: '30.6'},
-          { name: 'Kevin Durant', team: 'PHX Suns', value: '30.2' },
-          { name: 'LeBron James', team: 'LAL Lakers', value: '28.9' },
-          { name: 'Jayson Tatum', team: 'BOS Celtics', value: '28.4' },
-          { name: 'Damian Lillard', team: 'MIL Bucks', value: '27.8' },
-          { name: 'Giannis Antetokounmpo', team: 'MIL Bucks', value: '27.3' },
+          { name: 'Luka Dončić', team: 'LAL', value: '32.8' },
+          { name: 'Shai Gilgeous-Alexander', team: 'OKC', value: '31.8' },
+          { name: 'Anthony Edwards', team: 'MIN', value: '29.3' },
+          { name: 'Jaylen Brown', team: 'BOS', value: '29.3' },
+          { name: 'Donovan Mitchell', team: 'CLE', value: '29.0' },
         ],
         rebounds: [
-          { name: 'Anthony Davis', team: 'LAL Lakers', value: '13.2' },
-          { name: 'Nikola Jokic', team: 'DEN Nuggets', value: '12.8' },
-          { name: 'Giannis Antetokounmpo', team: 'MIL Bucks', value: '11.9' },
-          { name: 'Joel Embiid', team: 'PHI 76ers', value: '11.4' },
-          { name: 'Derrick Jones Jr.', team: 'ORL Magic', value: '10.6'},
-          { name: 'Alperen Sengun', team: 'HOU Rockets', value: '10.2' },
-          { name: 'Domantas Sabonis', team: 'SAC Kings', value: '10.1' },
+          { name: 'Nikola Jokić', team: 'DEN', value: '12.3' },
+          { name: 'Karl-Anthony Towns', team: 'NYK', value: '11.9' },
+          { name: 'Donovan Clingan', team: 'POR', value: '11.5' },
+          { name: 'Rudy Gobert', team: 'MIN', value: '11.1' },
+          { name: 'Victor Wembanyama', team: 'SAS', value: '11.1' },
         ],
         assists: [
-          { name: 'Nikola Jokic', team: 'DEN Nuggets', value: '10.0' },
-          { name: 'Trae Young', team: 'ATL Hawks', value: '9.8' },
-          { name: 'Tyrese Haliburton', team: 'IND Pacers', value: '9.5' },
-          { name: 'LaMelo Ball', team: 'CHA Hornets', value: '8.8' },
-          { name: 'James Harden', team: 'LAC Clippers', value: '8.6' },
-          { name: 'Shai Gilgeous-Alexander', team: 'OKC Thunder', value: '8.3' },
-          { name: 'Luka Doncic', team: 'DAL Mavericks', value: '8.0' },
+          { name: 'Nikola Jokić', team: 'DEN', value: '10.7' },
+          { name: 'Cade Cunningham', team: 'DET', value: '9.6' },
+          { name: 'Luka Dončić', team: 'LAL', value: '8.6' },
+          { name: 'Jalen Johnson', team: 'ATL', value: '8.2' },
+          { name: 'James Harden', team: 'CLE', value: '8.2' },
         ],
         blocks: [
-          { name: 'Victor Wembanyama', team: 'SAS Spurs', value: '4.1' },
-          { name: 'Chet Holmgren', team: 'OKC Thunder', value: '2.9' },
-          { name: 'Anthony Davis', team: 'LAL Lakers', value: '2.6' },
-          { name: 'Brook Lopez', team: 'MIL Bucks', value: '2.4' },
-          { name: 'Myles Turner', team: 'IND Pacers', value: '2.2' },
-          { name: 'Jaren Jackson Jr.', team: 'MEM Grizzlies', value: '2.1' },
-          { name: 'Joel Embiid', team: 'PHI 76ers', value: '2.0' },
+          { name: 'Victor Wembanyama', team: 'SAS', value: '2.7' },
+          { name: 'Alex Sarr', team: 'WAS', value: '2.0' },
+          { name: 'Evan Mobley', team: 'CLE', value: '2.0' },
+          { name: 'Chet Holmgren', team: 'OKC', value: '1.9' },
+          { name: 'Jay Huff', team: 'IND', value: '1.9' },
         ],
         steals: [
-          { name: 'Derrick White', team: 'BOS Celtics', value: '1.9' },
-          { name: 'Shai Gilgeous-Alexander', team: 'OKC Thunder', value: '1.8' },
-          { name: 'Alex Caruso', team: 'OKC Thunder', value: '1.7' },
-          { name: 'Jrue Holiday', team: 'BOS Celtics', value: '1.6' },
-          { name: 'Scottie Barnes', team: 'TOR Raptors', value: '1.5' },
-          { name: 'Kawhi Leonard', team: 'LAC Clippers', value: '1.4' },
-          { name: 'Dejounte Murray', team: 'ATL Hawks', value: '1.3' },
+          { name: 'Kawhi Leonard', team: 'LAC', value: '2.1' },
+          { name: 'Cason Wallace', team: 'OKC', value: '2.0' },
+          { name: 'Tyrese Maxey', team: 'PHI', value: '2.0' },
+          { name: 'Ausar Thompson', team: 'DET', value: '1.9' },
+          { name: 'Dyson Daniels', team: 'ATL', value: '1.8' },
         ],
-        fieldgoalpct: [
-          { name: 'Karl-Anthony Towns', team: 'NYK Knicks', value: '.567' },
-          { name: 'Anthony Davis', team: 'LAL Lakers', value: '.564' },
-          { name: 'Joel Embiid', team: 'PHI 76ers', value: '.542' },
-          { name: 'Nikola Jokic', team: 'DEN Nuggets', value: '.538' },
-          { name: 'Alperen Sengun', team: 'HOU Rockets', value: '.531' },
-          { name: 'Brook Lopez', team: 'MIL Bucks', value: '.528' },
-          { name: 'Derrick Jones Jr.', team: 'ORL Magic', value: '.527' },
+        threepointers: [
+          { name: 'Donovan Mitchell', team: 'CLE', value: '185' },
+          { name: 'Kon Knueppel', team: 'CHA', value: '183' },
+          { name: 'Stephen Curry', team: 'GSW', value: '175' },
+          { name: 'Tyrese Maxey', team: 'PHI', value: '174' },
+          { name: 'Donte DiVincenzo', team: 'MIN', value: '171' },
         ],
         threepoint: [
-          { name: 'C.J. McCollum', team: 'NOP Pelicans', value: '.427' },
-          { name: 'Steph Curry', team: 'GSW Warriors', value: '.421' },
-          { name: 'Damian Lillard', team: 'MIL Bucks', value: '.413' },
-          { name: 'Klay Thompson', team: 'GSW Warriors', value: '.409' },
-          { name: 'Sam Hauser', team: 'BOS Celtics', value: '.406' },
-          { name: 'Tyler Herro', team: 'MIA Heat', value: '.404' },
-          { name: 'Mitch Robinson', team: 'LAC Clippers', value: '.402' },
+          { name: 'Luke Kennard', team: 'LAL', value: '49.4' },
+          { name: 'Jaylon Tyson', team: 'CLE', value: '47.5' },
+          { name: 'Sam Merrill', team: 'CLE', value: '47.2' },
+          { name: 'Tari Eason', team: 'HOU', value: '46.0' },
+          { name: 'Jaden McDaniels', team: 'MIN', value: '45.4' },
         ],
-        freethrow: [
-          { name: 'Karl-Anthony Towns', team: 'NYK Knicks', value: '.927' },
-          { name: 'Jayson Tatum', team: 'BOS Celtics', value: '.918' },
-          { name: 'Luka Doncic', team: 'DAL Mavericks', value: '.912' },
-          { name: 'Damian Lillard', team: 'MIL Bucks', value: '.908' },
-          { name: 'DeMar DeRozan', team: 'CHA Hornets', value: '.903' },
-          { name: 'Khris Middleton', team: 'MIL Bucks', value: '.897' },
-          { name: 'CJ McCollum', team: 'NOP Pelicans', value: '.895' },
+        fieldgoalpct: [
+          { name: 'Rudy Gobert', team: 'MIN', value: '70.3' },
+          { name: 'Deandre Ayton', team: 'LAL', value: '67.5' },
+          { name: 'Mark Williams', team: 'PHX', value: '66.5' },
+          { name: 'Giannis Antetokounmpo', team: 'MIL', value: '64.5' },
+          { name: 'Neemias Queta', team: 'BOS', value: '63.9' },
         ],
-        turnovers: [
-          { name: 'De\'Aaron Fox', team: 'SAC Kings', value: '3.2' },
-          { name: 'Trae Young', team: 'ATL Hawks', value: '3.1' },
-          { name: 'Luka Doncic', team: 'DAL Mavericks', value: '3.0' },
-          { name: 'LaMelo Ball', team: 'CHA Hornets', value: '2.8' },
-          { name: 'Nikola Jokic', team: 'DEN Nuggets', value: '2.7' },
-          { name: 'Shai Gilgeous-Alexander', team: 'OKC Thunder', value: '2.6' },
-          { name: 'Damian Lillard', team: 'MIL Bucks', value: '2.5' },
-        ],
-        minutesplayed: [
-          { name: 'Shai Gilgeous-Alexander', team: 'OKC Thunder', value: '36.2' },
-          { name: 'Luka Doncic', team: 'DAL Mavericks', value: '35.8' },
-          { name: 'De\'Aaron Fox', team: 'SAC Kings', value: '35.4' },
-          { name: 'Jayson Tatum', team: 'BOS Celtics', value: '35.1' },
-          { name: 'Giannis Antetokounmpo', team: 'MIL Bucks', value: '34.9' },
-          { name: 'LeBron James', team: 'LAL Lakers', value: '34.6' },
-          { name: 'Joel Embiid', team: 'PHI 76ers', value: '34.3' },
-        ],
-        gamesplayed: [
-          { name: 'Shai Gilgeous-Alexander', team: 'OKC Thunder', value: '57' },
-          { name: 'Kyrie Irving', team: 'DAL Mavericks', value: '56' },
-          { name: 'De\'Aaron Fox', team: 'SAC Kings', value: '56' },
-          { name: 'Jayson Tatum', team: 'BOS Celtics', value: '55' },
-          { name: 'Damian Lillard', team: 'MIL Bucks', value: '55' },
-          { name: 'Donovan Mitchell', team: 'CLE Cavaliers', value: '55' },
-          { name: 'Devin Booker', team: 'PHX Suns', value: '54' },
-        ],
-        offrebounds: [
-          { name: 'Antonio Reeves', team: 'SAC Kings', value: '2.8' },
-          { name: 'Nikola Jokic', team: 'DEN Nuggets', value: '2.6' },
-          { name: 'Anthony Davis', team: 'LAL Lakers', value: '2.4' },
-          { name: 'Joel Embiid', team: 'PHI 76ers', value: '2.3' },
-          { name: 'Alperen Sengun', team: 'HOU Rockets', value: '2.1' },
-          { name: 'Isaiah Stewart', team: 'DET Pistons', value: '2.0' },
-          { name: 'Brook Lopez', team: 'MIL Bucks', value: '1.9' },
-        ],
-        defrebounds: [
-          { name: 'Domantas Sabonis', team: 'SAC Kings', value: '7.8' },
-          { name: 'Nikola Jokic', team: 'DEN Nuggets', value: '7.5' },
-          { name: 'Anthony Davis', team: 'LAL Lakers', value: '7.2' },
-          { name: 'Giannis Antetokounmpo', team: 'MIL Bucks', value: '7.1' },
-          { name: 'Victor Wembanyama', team: 'SAS Spurs', value: '6.9' },
-          { name: 'Alperen Sengun', team: 'HOU Rockets', value: '6.8' },
-          { name: 'Joel Embiid', team: 'PHI 76ers', value: '6.7' },
+        fantasy: [
+          { name: 'Nikola Jokić', team: 'DEN', value: '62.2' },
+          { name: 'Luka Dončić', team: 'LAL', value: '56.5' },
+          { name: 'Shai Gilgeous-Alexander', team: 'OKC', value: '50.9' },
+          { name: 'Jalen Johnson', team: 'ATL', value: '50.3' },
+          { name: 'Victor Wembanyama', team: 'SAS', value: '50.0' },
         ],
       };
 
       function renderStats(category) {
         const data = statsData[category.toLowerCase()];
         const categoryNames = {
-          points: 'Points',
-          rebounds: 'Rebounds',
-          assists: 'Assists',
-          blocks: 'Blocks',
-          steals: 'Steals',
-          fieldgoalpct: 'Field Goal %',
-          threepoint: '3-Point %',
-          freethrow: 'Free Throw %',
-          turnovers: 'Turnovers',
-          minutesplayed: 'Minutes Per Game',
-          gamesplayed: 'Games Played',
-          offrebounds: 'Offensive Rebounds',
-          defrebounds: 'Defensive Rebounds',
+          points: 'Points Per Game',
+          rebounds: 'Rebounds Per Game',
+          assists: 'Assists Per Game',
+          blocks: 'Blocks Per Game',
+          steals: 'Steals Per Game',
+          threepointers: 'Three Pointers Made',
+          threepoint: 'Three Point Percentage',
+          fieldgoalpct: 'Field Goal Percentage',
+          fantasy: 'Fantasy Points Per Game',
         };
         const catTitle = categoryNames[category.toLowerCase()] || category;
 
         return `
           <div class="stats-leader-card">
-            <div class="stats-leader-card-header">${catTitle} Leaders (2025-26 Season)</div>
+            <div class="stats-leader-card-header">${catTitle}</div>
             <div class="stats-leader-list">
               ${data.map((p, i) => `
                 <div class="stats-leader-row">
@@ -1753,9 +1703,9 @@
           </div>`;
       }
 
-      // Render all stat categories at once
+      // Render selected stat categories (updated per user image)
       const grid = document.getElementById('stats-all-grid');
-      const categories = ['points', 'rebounds', 'assists', 'blocks', 'steals', 'fieldgoalpct', 'threepoint', 'freethrow', 'turnovers', 'minutesplayed', 'gamesplayed', 'offrebounds', 'defrebounds'];
+      const categories = ['points', 'rebounds', 'assists', 'blocks', 'steals', 'threepointers', 'threepoint', 'fieldgoalpct', 'fantasy'];
       grid.innerHTML = categories.map(cat => renderStats(cat)).join('');
 
 
