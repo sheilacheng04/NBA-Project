@@ -1,0 +1,242 @@
+[
+    {
+        "TeamName": "Oklahoma City Thunder",
+        "PlayoffProbability": "98.93%",
+        "WinPCT": "75.0%",
+        "PointsPG": 120.0,
+        "OppPointsPG": 108.0,
+        "ThreePointPCT": "36.2%"
+    },
+    {
+        "TeamName": "Detroit Pistons",
+        "PlayoffProbability": "98.42%",
+        "WinPCT": "75.5%",
+        "PointsPG": 117.0,
+        "OppPointsPG": 109.0,
+        "ThreePointPCT": "34.9%"
+    },
+    {
+        "TeamName": "Boston Celtics",
+        "PlayoffProbability": "98.87%",
+        "WinPCT": "64.8%",
+        "PointsPG": 115.0,
+        "OppPointsPG": 108.0,
+        "ThreePointPCT": "36.3%"
+    },
+    {
+        "TeamName": "San Antonio Spurs",
+        "PlayoffProbability": "98.05%",
+        "WinPCT": "70.4%",
+        "PointsPG": 118.0,
+        "OppPointsPG": 112.0,
+        "ThreePointPCT": "34.7%"
+    },
+    {
+        "TeamName": "New York Knicks",
+        "PlayoffProbability": "98.55%",
+        "WinPCT": "63.6%",
+        "PointsPG": 118.0,
+        "OppPointsPG": 112.0,
+        "ThreePointPCT": "37.8%"
+    },
+    {
+        "TeamName": "Denver Nuggets",
+        "PlayoffProbability": "98.18%",
+        "WinPCT": "63.6%",
+        "PointsPG": 120.0,
+        "OppPointsPG": 116.0,
+        "ThreePointPCT": "39.5%"
+    },
+    {
+        "TeamName": "Cleveland Cavaliers",
+        "PlayoffProbability": "98.54%",
+        "WinPCT": "61.8%",
+        "PointsPG": 120.0,
+        "OppPointsPG": 116.0,
+        "ThreePointPCT": "35.8%"
+    },
+    {
+        "TeamName": "Houston Rockets",
+        "PlayoffProbability": "98.55%",
+        "WinPCT": "62.3%",
+        "PointsPG": 115.0,
+        "OppPointsPG": 110.0,
+        "ThreePointPCT": "37.0%"
+    },
+    {
+        "TeamName": "Los Angeles Lakers",
+        "PlayoffProbability": "98.15%",
+        "WinPCT": "61.1%",
+        "PointsPG": 116.0,
+        "OppPointsPG": 116.0,
+        "ThreePointPCT": "35.0%"
+    },
+    {
+        "TeamName": "Toronto Raptors",
+        "PlayoffProbability": "97.19%",
+        "WinPCT": "58.2%",
+        "PointsPG": 114.0,
+        "OppPointsPG": 112.0,
+        "ThreePointPCT": "34.4%"
+    },
+    {
+        "TeamName": "Minnesota Timberwolves",
+        "PlayoffProbability": "95.91%",
+        "WinPCT": "60.7%",
+        "PointsPG": 120.0,
+        "OppPointsPG": 115.0,
+        "ThreePointPCT": "37.5%"
+    },
+    {
+        "TeamName": "Philadelphia 76ers",
+        "PlayoffProbability": "88.65%",
+        "WinPCT": "55.6%",
+        "PointsPG": 116.0,
+        "OppPointsPG": 116.0,
+        "ThreePointPCT": "35.6%"
+    },
+    {
+        "TeamName": "Orlando Magic",
+        "PlayoffProbability": "81.39%",
+        "WinPCT": "52.8%",
+        "PointsPG": 115.0,
+        "OppPointsPG": 115.0,
+        "ThreePointPCT": "34.2%"
+    },
+    {
+        "TeamName": "Phoenix Suns",
+        "PlayoffProbability": "96.73%",
+        "WinPCT": "58.2%",
+        "PointsPG": 114.0,
+        "OppPointsPG": 112.0,
+        "ThreePointPCT": "36.4%"
+    },
+    {
+        "TeamName": "Miami Heat",
+        "PlayoffProbability": "87.58%",
+        "WinPCT": "51.8%",
+        "PointsPG": 120.0,
+        "OppPointsPG": 117.0,
+        "ThreePointPCT": "36.0%"
+    },
+    {
+        "TeamName": "Golden State Warriors",
+        "PlayoffProbability": "86.46%",
+        "WinPCT": "52.7%",
+        "PointsPG": 116.0,
+        "OppPointsPG": 114.0,
+        "ThreePointPCT": "36.2%"
+    },
+    {
+        "TeamName": "Charlotte Hornets",
+        "PlayoffProbability": "15.97%",
+        "WinPCT": "47.3%",
+        "PointsPG": 116.0,
+        "OppPointsPG": 114.0,
+        "ThreePointPCT": "37.3%"
+    },
+    {
+        "TeamName": "Portland Trail Blazers",
+        "PlayoffProbability": "22.78%",
+        "WinPCT": "48.2%",
+        "PointsPG": 116.0,
+        "OppPointsPG": 118.0,
+        "ThreePointPCT": "34.2%"
+    },
+    {
+        "TeamName": "Atlanta Hawks",
+        "PlayoffProbability": "24.55%",
+        "WinPCT": "46.4%",
+        "PointsPG": 117.0,
+        "OppPointsPG": 119.0,
+        "ThreePointPCT": "37.0%"
+    },
+    {
+        "TeamName": "LA Clippers",
+        "PlayoffProbability": "10.72%",
+        "WinPCT": "48.1%",
+        "PointsPG": 112.0,
+        "OppPointsPG": 112.0,
+        "ThreePointPCT": "36.5%"
+    },
+    {
+        "TeamName": "Memphis Grizzlies",
+        "PlayoffProbability": "3.74%",
+        "WinPCT": "37.7%",
+        "PointsPG": 115.0,
+        "OppPointsPG": 117.0,
+        "ThreePointPCT": "35.1%"
+    },
+    {
+        "TeamName": "Chicago Bulls",
+        "PlayoffProbability": "3.24%",
+        "WinPCT": "43.6%",
+        "PointsPG": 117.0,
+        "OppPointsPG": 121.0,
+        "ThreePointPCT": "36.7%"
+    },
+    {
+        "TeamName": "Dallas Mavericks",
+        "PlayoffProbability": "1.73%",
+        "WinPCT": "35.2%",
+        "PointsPG": 114.0,
+        "OppPointsPG": 117.0,
+        "ThreePointPCT": "34.2%"
+    },
+    {
+        "TeamName": "Milwaukee Bucks",
+        "PlayoffProbability": "1.71%",
+        "WinPCT": "43.4%",
+        "PointsPG": 112.0,
+        "OppPointsPG": 115.0,
+        "ThreePointPCT": "39.2%"
+    },
+    {
+        "TeamName": "Utah Jazz",
+        "PlayoffProbability": "2.85%",
+        "WinPCT": "32.1%",
+        "PointsPG": 118.0,
+        "OppPointsPG": 126.0,
+        "ThreePointPCT": "35.0%"
+    },
+    {
+        "TeamName": "Brooklyn Nets",
+        "PlayoffProbability": "1.67%",
+        "WinPCT": "28.3%",
+        "PointsPG": 108.0,
+        "OppPointsPG": 115.0,
+        "ThreePointPCT": "34.4%"
+    },
+    {
+        "TeamName": "New Orleans Pelicans",
+        "PlayoffProbability": "2.91%",
+        "WinPCT": "26.8%",
+        "PointsPG": 115.0,
+        "OppPointsPG": 120.0,
+        "ThreePointPCT": "34.5%"
+    },
+    {
+        "TeamName": "Indiana Pacers",
+        "PlayoffProbability": "1.44%",
+        "WinPCT": "27.3%",
+        "PointsPG": 111.0,
+        "OppPointsPG": 119.0,
+        "ThreePointPCT": "34.7%"
+    },
+    {
+        "TeamName": "Sacramento Kings",
+        "PlayoffProbability": "1.56%",
+        "WinPCT": "21.4%",
+        "PointsPG": 110.0,
+        "OppPointsPG": 121.0,
+        "ThreePointPCT": "34.2%"
+    },
+    {
+        "TeamName": "Washington Wizards",
+        "PlayoffProbability": "2.37%",
+        "WinPCT": "26.4%",
+        "PointsPG": 112.0,
+        "OppPointsPG": 123.0,
+        "ThreePointPCT": "35.4%"
+    }
+]
